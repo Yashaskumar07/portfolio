@@ -1,11 +1,139 @@
-import React from 'react'
-import Home from './Home/page'
-const page = () => {
-  return (
-    <div>
-      <Home/>
-    </div>
-  )
-}
+"use client";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+  FaTelegram,
+  FaInstagram,
+  FaDev,
+} from "react-icons/fa";
+import Image from "next/image";
 
-export default page
+const socialLinks = [
+  { icon: FaLinkedin, url: "https://linkedin.com/in/yourprofile" },
+  { icon: FaGithub, url: "https://github.com/yourprofile" },
+  { icon: FaTwitter, url: "https://twitter.com/yourprofile" },
+  { icon: FaTelegram, url: "https://t.me/yourprofile" },
+  { icon: FaInstagram, url: "https://instagram.com/yourprofile" },
+  { icon: FaDev, url: "https://dev.to/yourprofile" },
+];
+
+// Words for typing effect
+const typingWords = [
+  "Web Development",
+  "CyberSecurity",
+  "React.js ",
+  "Next.js Enthusiast",
+];
+
+export default function Home() {
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = index % typingWords.length;
+    const fullText = typingWords[current];
+
+    let timer: NodeJS.Timeout;
+
+    if (isDeleting) {
+      timer = setTimeout(() => {
+        setText(fullText.substring(0, text.length - 1));
+      }, 100);
+    } else {
+      timer = setTimeout(() => {
+        setText(fullText.substring(0, text.length + 1));
+      }, 200);
+    }
+
+    // Pause at full text before deleting
+    if (!isDeleting && text === fullText) {
+      clearTimeout(timer);
+      timer = setTimeout(() => setIsDeleting(true), 1500);
+    }
+
+    // Move to next word after deleting
+    if (isDeleting && text === "") {
+      setIsDeleting(false);
+      setIndex((prev) => prev + 1);
+    }
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, index]);
+
+  return (
+    <main className="min-h-screen  relative overflow-hidden">
+      {/* Background network effect */}
+      <canvas
+        id="network-canvas"
+        className="absolute inset-0 -z-10"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:py-24 py-16 gap-10">
+        {/* Left Side */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-xl space-y-6"
+        >
+          <h1 className="text-4xl font-bold text-gray-900">Hi There,</h1>
+          <h2 className="text-5xl font-extrabold text-gray-900">
+            I&apos;m Yashas{" "}
+            <span className="text-orange-500">Kumar</span>
+          </h2>
+          <p className="text-xl font-semibold text-red-700">
+            I Am Into{" "}
+            <span className="border-b-2 border-red-700">{text}&nbsp;</span>
+          </p>
+
+        <Link
+  href="/resume.pdf"
+  className="bg-blue-900 hover:bg-blue-700 text-white font-semibold rounded-full px-6 py-3 shadow-lg transition inline-block"
+>
+  Resume↓
+</Link>
+
+          {/* Social Icons */}
+          <div className="flex space-x-4 mt-6">
+            {socialLinks.map(({ icon: Icon, url }, idx) => (
+              <a
+                key={idx}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-blue-600 transition"
+                aria-label="Social link"
+              >
+                <Icon size={20} />
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Right Side Avatar */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="w-64 h-64 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg"
+        >
+          {/* Replace with your avatar image */}
+         <Image
+  src="/yashas.jpg"
+  alt="Yashas Kumar Avatar"
+  width={224} // w-56 = 224px
+  height={224} // h-56 = 224px
+  className="rounded-full object-cover border-4 border-yellow-300 bg-black shadow-lg"
+/>
+
+        </motion.div>
+      </div>
+    </main>
+  );
+}
