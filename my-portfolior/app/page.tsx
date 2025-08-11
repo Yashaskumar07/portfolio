@@ -127,7 +127,7 @@ export default function Home() {
          <Image
   src="/yashas.jpg"
   alt="Yashas Kumar Avatar"
-  width={224} // w-56 = 224px
+  width={300} // w-56 = 224px
   height={224} // h-56 = 224px
   className="rounded-full object-cover border-4 border-yellow-300 bg-black shadow-lg"
 />
