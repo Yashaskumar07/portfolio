@@ -26,7 +26,7 @@ const projects = [
       "Personal portfolio website built with Next.js and Tailwind CSS.",
     imageUrl: "/projects/portfolio.png",
     githubUrl: "https://github.com/yourusername/portfolio",
-    demoUrl: "https://yourdomain.com",
+    demoUrl: "https://portfolio-y2dn.vercel.app/",
   },
 ];
 
