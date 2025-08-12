@@ -48,9 +48,9 @@ const cardVariants = {
 
 export default function SkillsPage() {
   return (
-    <main className="min-h-screen bg-gray-50 py-16 px-6 sm:px-12 md:px-24">
+    <main className="min-h-screen dark:bg-gray-900 transition-colors duration-300 py-16 px-6 sm:px-12 md:px-24">
       <h1 className="text-5xl font-extrabold mb-12 text-center text-gray-900">
-        My Skills
+      <span className="text-orange-500 dark:text-orange-400"> My Skills</span>
       </h1>
 
       <motion.div
@@ -62,7 +62,7 @@ export default function SkillsPage() {
         {skills.map(({ name, icon: Icon, color }) => (
           <motion.div
             key={name}
-            className="bg-white rounded-xl shadow-lg flex flex-col items-center justify-center p-6 cursor-default hover:shadow-xl transition-shadow"
+            className=" rounded-xl shadow-lg flex flex-col items-center justify-center p-6 cursor-default hover:shadow-xl transition-shadow"
             variants={cardVariants}
             whileHover={{ scale: 1.05 }}
           >

@@ -23,7 +23,8 @@ const AboutMe = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="max-w-5xl mx-auto p-8 bg-gradient-to-tr from-white via-blue-50 to-white rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-10"
+      className="max-w-5xl mx-auto p-8 
+      via-blue-50 to-white rounded-2xl shadow-lg flex flex-col md:flex-row items-center gap-10"
     >
       {/* Profile Photo */}
       <motion.div
@@ -44,7 +45,7 @@ const AboutMe = () => {
 
       {/* Text Content */}
       <div className="flex-1">
-        <h2 className="text-5xl font-extrabold mb-6 text-gray-900">About Me</h2>
+        <h2 className="text-5xl font-extrabold mb-6 text-gray-900"><span className="text-orange-500 dark:text-orange-400">About Me</span></h2>
 
         <motion.p
           initial={{ opacity: 0 }}

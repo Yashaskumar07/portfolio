@@ -73,17 +73,18 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center py-20 px-6 sm:px-12">
+    <main className="min-h-screen dark:bg-gray-900 transition-colors duration-300 flex items-center justify-center py-20 px-6 sm:px-12">
+
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="bg-white max-w-xl w-full rounded-xl shadow-xl p-10"
+        className="max-w-xl w-full rounded-xl shadow-xl p-10"
         noValidate
       >
         <h1 className="text-4xl font-extrabold mb-8 text-gray-900 text-center">
-          Contact Me
+        <span className="text-orange-500 dark:text-orange-400"> Contact Me</span>
         </h1>
 
         {submitted && (

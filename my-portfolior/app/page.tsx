@@ -21,7 +21,6 @@ const socialLinks = [
   { icon: FaDev, url: "https://dev.to/yourprofile" },
 ];
 
-// Words for typing effect
 const typingWords = [
   "Web Development",
   "CyberSecurity",
@@ -37,7 +36,6 @@ export default function Home() {
   useEffect(() => {
     const current = index % typingWords.length;
     const fullText = typingWords[current];
-
     let timer: NodeJS.Timeout;
 
     if (isDeleting) {
@@ -50,13 +48,11 @@ export default function Home() {
       }, 200);
     }
 
-    // Pause at full text before deleting
     if (!isDeleting && text === fullText) {
       clearTimeout(timer);
       timer = setTimeout(() => setIsDeleting(true), 1500);
     }
 
-    // Move to next word after deleting
     if (isDeleting && text === "") {
       setIsDeleting(false);
       setIndex((prev) => prev + 1);
@@ -66,7 +62,7 @@ export default function Home() {
   }, [text, isDeleting, index]);
 
   return (
-    <main className="min-h-screen  relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden  dark:bg-gray-900 transition-colors duration-300">
       {/* Background network effect */}
       <canvas
         id="network-canvas"
@@ -82,22 +78,26 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-xl space-y-6"
         >
-          <h1 className="text-4xl font-bold text-gray-900">Hi There,</h1>
-          <h2 className="text-5xl font-extrabold text-gray-900">
-            I&apos;m Yashas{" "}
-            <span className="text-orange-500">Kumar</span>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-orange-500">
+            Hi There,
+          </h1>
+          <h2 className="text-5xl font-extrabold text-gray-900 dark:text-orange-400">
+          <span className="text-orange-500 dark:text-orange-400"> I&apos;m Yashas{" "}</span>
+            <span className="text-orange-500 dark:text-orange-400">Kumar</span>
           </h2>
-          <p className="text-xl font-semibold text-red-700">
+          <p className="text-xl font-semibold text-red-700 dark:text-red-400">
             I Am Into{" "}
-            <span className="border-b-2 border-red-700">{text}&nbsp;</span>
+            <span className="border-b-2 border-red-700 dark:border-red-400">
+              {text}&nbsp;
+            </span>
           </p>
 
-        <Link
-  href="/resume.pdf"
-  className="bg-blue-900 hover:bg-blue-700 text-white font-semibold rounded-full px-6 py-3 shadow-lg transition inline-block"
->
-  Resume↓
-</Link>
+          <Link
+            href="/resume.pdf"
+            className="bg-blue-900 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-semibold rounded-full px-6 py-3 shadow-lg transition inline-block"
+          >
+            Resume ↓
+          </Link>
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-6">
@@ -107,7 +107,7 @@ export default function Home() {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-blue-600 transition"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-black dark:bg-gray-700 text-white hover:bg-blue-600 dark:hover:bg-blue-500 transition"
                 aria-label="Social link"
               >
                 <Icon size={20} />
@@ -121,17 +121,15 @@ export default function Home() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-64 h-64 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg"
+          className="w-64 h-64 rounded-full bg-yellow-400 dark:bg-yellow-500 flex items-center justify-center shadow-lg"
         >
-          {/* Replace with your avatar image */}
-         <Image
-  src="/yashas.jpg"
-  alt="Yashas Kumar Avatar"
-  width={300} // w-56 = 224px
-  height={224} // h-56 = 224px
-  className="rounded-full object-cover border-4 border-yellow-300 bg-black shadow-lg"
-/>
-
+          <Image
+            src="/yashas.jpg"
+            alt="Yashas Kumar Avatar"
+            width={300}
+            height={224}
+            className="rounded-full object-cover border-4 border-yellow-300 dark:border-yellow-400 bg-black shadow-lg"
+          />
         </motion.div>
       </div>
     </main>

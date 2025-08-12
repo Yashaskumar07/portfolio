@@ -44,7 +44,7 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen py-16 px-6 sm:px-12 md:px-24">
       <h1 className="text-5xl font-extrabold mb-12 text-center text-gray-900">
-        My Projects
+      <span className="text-orange-500 dark:text-orange-400"> My Projects</span>
       </h1>
 
       <motion.div

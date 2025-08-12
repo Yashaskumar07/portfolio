@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -47,7 +47,9 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
+          <div className="ml-auto">
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Hamburger */}
@@ -66,9 +68,11 @@ export default function Navbar() {
             viewBox="0 0 24 24"
           >
             {isOpen ? (
-              <path d="M6 18L18 6M6 6l12 12" /> // X icon
+              /* X icon */
+              <path d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path d="M3 12h18M3 6h18M3 18h18" /> // Hamburger icon
+              /* Hamburger icon */
+              <path d="M3 12h18M3 6h18M3 18h18" />
             )}
           </svg>
         </button>
@@ -84,7 +88,10 @@ export default function Navbar() {
         >
           <ul>
             {navLinks.map((link) => (
-              <li key={link.name} className="border-b border-gray-200 dark:border-gray-700">
+              <li
+                key={link.name}
+                className="border-b border-gray-200 dark:border-gray-700"
+              >
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
@@ -95,7 +102,7 @@ export default function Navbar() {
               </li>
             ))}
             <li className="px-6 py-4 flex justify-center">
-         
+              <ThemeToggle />
             </li>
           </ul>
         </motion.div>
