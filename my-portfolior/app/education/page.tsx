@@ -42,15 +42,15 @@ const interests = [
 
 export default function Education() {
   return (
-    <main className="min-h-screen bg-gray-50 py-16 px-6 md:px-20">
+    <main className="min-h-screen  dark:bg-gray-900 transition-colors duration-300 py-16 px-6 md:px-20">
       {/* Education Header */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800"
+        className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800 dark:text-white"
       >
-        Education
+       <span className="text-orange-500 dark:text-orange-400">Education</span> 
       </motion.h1>
 
       {/* Education Timeline */}
@@ -72,16 +72,22 @@ export default function Education() {
                 {index + 1}
               </div>
               <div
-                className={`bg-white p-6 rounded-2xl shadow-lg md:w-[45%] mt-12 md:mt-0 ${
+                className={`bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg md:w-[45%] mt-12 md:mt-0 transition-colors duration-300 ${
                   index % 2 === 0 ? "md:ml-12" : "md:mr-12"
                 }`}
               >
                 <h3 className="text-lg font-semibold text-blue-600">
                   {edu.year}
                 </h3>
-                <h2 className="text-xl font-bold text-gray-800">{edu.degree}</h2>
-                <p className="text-gray-600 italic">{edu.institution}</p>
-                <p className="mt-2 text-gray-700">{edu.description}</p>
+                <h2 className="text-xl font-bold text-gray-800 dark:text-white">
+                  {edu.degree}
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400 italic">
+                  {edu.institution}
+                </p>
+                <p className="mt-2 text-gray-700 dark:text-gray-300">
+                  {edu.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -94,7 +100,7 @@ export default function Education() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-bold text-center mt-20 mb-10 text-gray-800"
+        className="text-3xl md:text-4xl font-bold text-center mt-20 mb-10 text-gray-800 dark:text-white"
       >
         My Interests
       </motion.h2>
@@ -107,13 +113,15 @@ export default function Education() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition"
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition-colors duration-300"
           >
             {interest.icon}
-            <h3 className="mt-4 text-xl font-semibold text-gray-800">
+            <h3 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
               {interest.name}
             </h3>
-            <p className="mt-2 text-gray-600">{interest.description}</p>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              {interest.description}
+            </p>
           </motion.div>
         ))}
       </div>
