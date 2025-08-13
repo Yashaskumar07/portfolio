@@ -5,10 +5,7 @@ import { motion } from "framer-motion";
 import {
   FaLinkedin,
   FaGithub,
-  FaTwitter,
-  FaTelegram,
   FaInstagram,
-  FaDev,
 } from "react-icons/fa";
 import Image from "next/image";
 
