@@ -24,7 +24,8 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="w-full mx-auto px-6 py-4 flex justify-between items-center">
+
         {/* Logo */}
         <Link
           href="/"
