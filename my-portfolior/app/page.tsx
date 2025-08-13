@@ -15,10 +15,8 @@ import Image from "next/image";
 const socialLinks = [
   { icon: FaLinkedin, url: "https://linkedin.com/in/yourprofile" },
   { icon: FaGithub, url: "https://github.com/yourprofile" },
-  { icon: FaTwitter, url: "https://twitter.com/yourprofile" },
-  { icon: FaTelegram, url: "https://t.me/yourprofile" },
   { icon: FaInstagram, url: "https://instagram.com/yourprofile" },
-  { icon: FaDev, url: "https://dev.to/yourprofile" },
+  
 ];
 
 const typingWords = [
