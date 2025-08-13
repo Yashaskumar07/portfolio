@@ -122,7 +122,7 @@ export default function Home() {
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
-      className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-yellow-400 dark:bg-yellow-500 flex items-center justify-center shadow-lg"
+      className="mt-8 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-yellow-400 dark:bg-yellow-500 flex items-center justify-center shadow-lg"
     >
       <Image
         src="/yashas.jpg"
