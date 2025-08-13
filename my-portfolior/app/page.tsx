@@ -70,7 +70,8 @@ export default function Home() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:py-24 py-16 gap-10">
+<div className="mx-auto flex flex-col md:flex-row items-center justify-between md:py-24 py-16 gap-10">
+
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -79,7 +80,8 @@ export default function Home() {
           className="max-w-xl space-y-6"
         >
           <h1 className="text-4xl font-bold text-gray-900 dark:text-orange-500">
-            Hi There,
+          <span className="text-sky-400 dark:text-sky-400">Hi There,</span>
+
           </h1>
           <h2 className="text-5xl font-extrabold text-gray-900 dark:text-orange-400">
           <span className="text-orange-500 dark:text-orange-400"> I&apos;m Yashas{" "}</span>
@@ -121,7 +123,7 @@ export default function Home() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-64 h-64 rounded-full bg-yellow-400 dark:bg-yellow-500 flex items-center justify-center shadow-lg"
+          className="mt-8 w-64 h-64 rounded-full bg-yellow-400 dark:bg-yellow-500 flex items-center justify-center shadow-lg"
         >
           <Image
             src="/yashas.jpg"
