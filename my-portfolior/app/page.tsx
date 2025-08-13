@@ -13,9 +13,9 @@ import {
 import Image from "next/image";
 
 const socialLinks = [
-  { icon: FaLinkedin, url: "https://linkedin.com/in/yourprofile" },
-  { icon: FaGithub, url: "https://github.com/yourprofile" },
-  { icon: FaInstagram, url: "https://instagram.com/yourprofile" },
+  { icon: FaLinkedin, url: "https://www.linkedin.com/in/yashas-kumar-039a1233a/" },
+  { icon: FaGithub, url: "https://github.com/Yashaskumar07" },
+  { icon: FaInstagram, url: "https://instagram.com/yas_.has" },
   
 ];
 
