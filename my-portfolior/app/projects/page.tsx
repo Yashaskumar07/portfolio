@@ -8,7 +8,7 @@ const projects = [
     title: "Aushadi-mitra",
     description:
       "Aushadhi Mitra is a government-style medical portal built using Next.js and MongoDB, designed to help citizens easily access affordable medicines, locate nearby Jan Aushadhi stores.",
-    imageUrl: "/vercel.png",
+    imageUrl: "/vercel.PNG",
     githubUrl: "https://github.com/Yashaskumar07/aushadhi-mitra",
     demoUrl: "https://aushadhi-mitra.vercel.app",
   },
