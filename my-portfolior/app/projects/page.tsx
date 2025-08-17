@@ -20,14 +20,7 @@ const projects = [
     githubUrl: "https://github.com/Yashaskumar07/animalcare",
     demoUrl: "https://healthbot-demo.com",
   },
-  {
-    title: "Portfolio Website",
-    description:
-      "Personal portfolio website built with Next.js and Tailwind CSS.",
-    imageUrl: "/projects/portfolio.png",
-    githubUrl: "https://github.com/yourusername/portfolio",
-    demoUrl: "https://portfolio-y2dn.vercel.app/",
-  },
+
 ];
 
 const containerVariants = {
